@@ -61,7 +61,7 @@ public class NavigationWaypoint : InteractableObject
                 Interaction.Instance.CurrentWaypoint.Deactivate();
             }
             Interaction.Instance.CurrentWaypoint = this;
-            Interaction.Instance.transform.parent.position = transform.position;
+            Interaction.Instance.transform.parent.position = transform.position + new Vector3(0, 1.5f, 0);
             if (objectCollider != null)
             {
                 objectCollider.enabled = false;

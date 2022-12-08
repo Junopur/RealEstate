@@ -3,7 +3,11 @@ guid: 46f088ba225fb5e41a92bd4132c8979e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - icon: {instanceID: 0}
+  - background: {instanceID: 0}
+  - interactClip: {fileID: 8300000, guid: 6ffe877355ff52e4e8f3fc91a4c86c28, type: 3}
+  - interactClipOpen: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -14,10 +14,12 @@ public class DigitalTooltip : InteractableObject
     [SerializeField] private Sprite background;
     [Tooltip("This is the audio clip that will play when notes are opened/closed.")]
     [SerializeField] private AudioClip interactClip;
+    [SerializeField] private AudioClip interactClipOpen; //Opens audio clip & plays it  
 
     private Image imageRenderer; //should be a child of this object
     private GameObject textObject; //should be a child of the image renderer object
     private AudioSource audioSource;
+
 
     //Awake is executed before the Start method
     private void Awake()
@@ -85,9 +87,10 @@ public class DigitalTooltip : InteractableObject
             {
                 textObject.SetActive(true);
             }
-            if (audioSource != null && interactClip != null)
+            if (audioSource != null && interactClipOpen != null) // searches for audio source, returns null if not present, as well as interactClipOpen null
             {
                 audioSource.PlayOneShot(interactClip);
+                audioSource.PlayOneShot(interactClipOpen); // plays audio clip once 
             }
             return true;
         }
@@ -113,7 +116,8 @@ public class DigitalTooltip : InteractableObject
             }
             if (audioSource != null && interactClip != null)
             {
-                audioSource.PlayOneShot(interactClip);
+                audioSource.Stop(); //Stops audio source from running, closes it
+                audioSource.PlayOneShot(interactClip); //plays audio source once 
             }
             return true;
         }
